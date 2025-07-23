@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrix Determinant Calculator - Privacy Policy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #667eea 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.96);
+            border-radius: 25px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            backdrop-filter: blur(15px);
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50, #34495e, #3498db);
+            color: white;
+            padding: 50px 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .app-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 25px;
+            margin: 0 auto 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            font-weight: bold;
+            color: white;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .app-icon::before {
+            content: "📊";
+            font-size: 50px;
+        }
+
+        .header h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .content {
+            padding: 50px 40px;
+        }
+
+        .last-updated {
+            background: linear-gradient(135deg, #e8f4fd, #f0f8ff);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            text-align: center;
+            font-weight: 600;
+            color: #2c3e50;
+            border: 2px solid #3498db;
+        }
+
+        h2 {
+            color: #2c3e50;
+            font-size: 1.8rem;
+            margin: 40px 0 20px 0;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #3498db;
+            position: relative;
+        }
+
+        h2::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -3px;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+
+        h3 {
+            color: #34495e;
+            font-size: 1.3rem;
+            margin: 25px 0 15px 0;
+            font-weight: 600;
+        }
+
+        p, li {
+            margin-bottom: 12px;
+            color: #555;
+            font-size: 1rem;
+        }
+
+        ul {
+            margin-left: 25px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #e3f2fd, #f3e5f5);
+            border-left: 5px solid #3498db;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .highlight-box strong {
+            color: #2c3e50;
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 35px;
+            border-radius: 20px;
+            margin-top: 40px;
+            text-align: center;
+            border: 2px solid #dee2e6;
+        }
+
+        .contact-info h3 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+        }
+
+        .contact-link {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .contact-link:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+
+        .footer {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            padding: 30px 40px;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+            
+            .content {
+                padding: 40px 25px;
+            }
+            
+            .header {
+                padding: 40px 25px;
+            }
+            
+            .header h1 {
+                font-size: 2.2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .policy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 25px 0;
+        }
+
+        .policy-card {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 5px solid #3498db;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .policy-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .policy-card h4 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .feature-list {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .feature-list ul {
+            margin: 0;
+        }
+
+        .math-symbol {
+            color: #3498db;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .offline-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="app-icon"></div>
+            <h1>Matrix Determinant Calculator</h1>
+            <p>Privacy Policy & Terms of Service</p>
+            <div class="offline-badge">100% Offline App</div>
+        </div>
+
+        <div class="content">
+            <div class="last-updated">
+                <strong>Last Updated:</strong> January 2025
+            </div>
+
+            <div class="section">
+                <h2>🔒 Privacy-First Mathematical Computing</h2>
+                <div class="highlight-box">
+                    <p><strong>Matrix Determinant Calculator</strong> is a completely offline mathematical computation tool designed for students, engineers, and mathematicians. We are committed to protecting your privacy and ensuring that your mathematical work remains completely private and secure on your device.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>📱 What This App Does</h2>
+                
+                <p>Our Matrix Determinant Calculator is an advanced linear algebra tool that provides:</p>
+                
+                <div class="feature-list">
+                    <ul>
+                        <li><span class="math-symbol">det(A)</span> - Determinant calculations for 2×2, 3×3, and 4×4 matrices</li>
+                        <li><span class="math-symbol">Cofactor expansion</span> - Step-by-step calculation methods</li>
+                        <li><span class="math-symbol">Matrix templates</span> - Identity, zero, and sample matrices</li>
+                        <li><span class="math-symbol">Educational tools</span> - Learning aids for linear algebra students</li>
+                        <li><span class="math-symbol">Offline computation</span> - No internet connection required</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🛡️ Information We Collect</h2>
+                
+                <div class="policy-grid">
+                    <div class="policy-card">
+                        <h4>🔢 Mathematical Data</h4>
+                        <p>Matrix values, calculations, and results are processed locally on your device and never transmitted anywhere.</p>
+                    </div>
+                    
+                    <div class="policy-card">
+                        <h4>⚙️ App Preferences</h4>
+                        <p>Settings like preferred matrix size, calculation method, and display options are stored locally.</p>
+                    </div>
+                    
+                    <div class="policy-card">
+                        <h4>📊 Anonymous Usage</h4>
+                        <p>Basic app usage statistics may be collected anonymously to improve functionality and user experience.</p>
+                    </div>
+                </div>
+
+                <h3>What We Absolutely DO NOT Collect:</h3>
+                <ul>
+                    <li>Your mathematical work, calculations, or matrix data</li>
+                    <li>Personal identification information (name, email, student ID)</li>
+                    <li>Academic institution or educational information</li>
+                    <li>Location data or device tracking</li>
+                    <li>Photos, contacts, or other personal files</li>
+                    <li>Social media or account information</li>
+                    <li>Financial or payment information</li>
+                    <li>Browsing history or web activity</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>🔐 How We Protect Your Mathematical Work</h2>
+                
+                <h3>100% Local Processing</h3>
+                <p>All matrix calculations, determinant computations, and mathematical operations are performed entirely on your device. Your mathematical work never leaves your device, ensuring complete privacy and security.</p>
+
+                <h3>No Cloud Storage</h3>
+                <p>We do not store, sync, or backup your mathematical data to any cloud service. All your calculations remain exclusively on your device.</p>
+
+                <h3>No Account Required</h3>
+                <p>The app works completely offline without requiring registration, login, or any personal information. Simply download and start calculating!</p>
+
+                <h3>Secure Local Storage</h3>
+                <p>Any app preferences or settings are stored securely using your device's built-in security features and remain private to your device.</p>
+            </div>
+
+            <div class="section">
+                <h2>🎓 Educational Use & Student Privacy</h2>
+                
+                <div class="highlight-box">
+                    <p><strong>Perfect for Academic Use:</strong> This app is designed for students, teachers, and researchers. Your homework, assignments, and mathematical explorations remain completely private.</p>
+                </div>
+
+                <h3>FERPA Compliance</h3>
+                <p>For educational users, we understand the importance of academic privacy. Since we collect no educational data or student information, there are no FERPA compliance concerns.</p>
+
+                <h3>Safe for All Educational Levels</h3>
+                <ul>
+                    <li>High school algebra and pre-calculus students</li>
+                    <li>University linear algebra courses</li>
+                    <li>Engineering and mathematics programs</li>
+                    <li>Graduate research and professional use</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>🔄 Data Sharing and Third Parties</h2>
+                
+                <div class="highlight-box">
+                    <p><strong>Zero Data Sharing:</strong> Since we don't collect your mathematical data, there is nothing to share with third parties. Your calculations stay with you.</p>
+                </div>
+
+                <h3>Limited Third-Party Services:</h3>
+                <p>We may use minimal third-party services only for:</p>
+                <ul>
+                    <li><strong>App Store Analytics:</strong> Anonymous download and usage statistics</li>
+                    <li><strong>Crash Reporting:</strong> Anonymous error reports to fix bugs (no personal data included)</li>
+                    <li><strong>App Performance:</strong> Anonymous performance metrics to optimize calculations</li>
+                </ul>
+
+                <p><strong>Important:</strong> None of these services have access to your mathematical work or calculations.</p>
+            </div>
+
+            <div class="section">
+                <h2>👶 Children's Privacy (COPPA)</h2>
+                
+                <p>Matrix Determinant Calculator is safe for users of all ages, including students under 13:</p>
+                
+                <div class="feature-list">
+                    <ul>
+                        <li>No personal information collection</li>
+                        <li>No communication features or social interactions</li>
+                        <li>No external links or web browsing</li>
+                        <li>Pure mathematical content only</li>
+                        <li>Complete offline functionality</li>
+                        <li>No advertisements or marketing</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>⚙️ Your Rights and Control</h2>
+                
+                <div class="policy-grid">
+                    <div class="policy-card">
+                        <h4>🗑️ Delete All Data</h4>
+                        <p>Uninstall the app to immediately remove all locally stored calculations and preferences.</p>
+                    </div>
+                    
+                    <div class="policy-card">
+                        <h4>🔄 Reset Calculations</h4>
+                        <p>Clear your calculation history anytime through the app's reset functions.</p>
+                    </div>
+                    
+                    <div class="policy-card">
+                        <h4>📊 Analytics Control</h4>
+                        <p>Opt out of anonymous analytics through your device's privacy settings if desired.</p>
+                    </div>
+                    
+                    <div class="policy-card">
+                        <h4>⚡ Offline Control</h4>
+                        <p>Use airplane mode for complete isolation - the app works perfectly without any network connection.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>📐 Mathematical Accuracy and Limitations</h2>
+                
+                <h3>Computational Precision</h3>
+                <p>Our app uses standard floating-point arithmetic for calculations. While highly accurate for most educational and professional purposes, be aware of standard computer arithmetic limitations for very large or very small numbers.</p>
+
+                <h3>Supported Operations</h3>
+                <ul>
+                    <li>2×2 matrix determinants (exact calculation)</li>
+                    <li>3×3 matrix determinants (using cofactor expansion)</li>
+                    <li>4×4 matrix determinants (using cofactor expansion)</li>
+                    <li>Step-by-step calculation display</li>
+                    <li>Template matrices for learning</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>⚖️ Terms of Service</h2>
+                
+                <h3>License to Use</h3>
+                <p>We grant you a non-exclusive, non-transferable license to use Matrix Determinant Calculator for personal, educational, and professional mathematical computation.</p>
+
+                <h3>Acceptable Use</h3>
+                <p>You may use this app for:</p>
+                <ul>
+                    <li>Educational assignments and homework</li>
+                    <li>Professional engineering and mathematical work</li>
+                    <li>Research and academic purposes</li>
+                    <li>Learning linear algebra concepts</li>
+                </ul>
+
+                <p>You agree not to:</p>
+                <ul>
+                    <li>Reverse engineer or modify the app</li>
+                    <li>Use the app for illegal purposes</li>
+                    <li>Distribute or resell the app</li>
+                    <li>Attempt to extract or compromise the calculation algorithms</li>
+                </ul>
+
+                <h3>Educational Disclaimer</h3>
+                <p>While our calculations are accurate, always verify important results and understand the mathematical concepts. This tool is designed to aid learning, not replace mathematical understanding.</p>
+            </div>
+
+            <div class="section">
+                <h2>🌍 International Compliance</h2>
+                
+                <p>Matrix Determinant Calculator complies with international privacy regulations:</p>
+                
+                <ul>
+                    <li><strong>GDPR (European Union):</strong> Minimal data processing, user rights respected</li>
+                    <li><strong>CCPA (California):</strong> No personal information sale or sharing</li>
+                    <li><strong>COPPA (United States):</strong> Safe for children, no data collection from minors</li>
+                    <li><strong>FERPA (Education):</strong> No educational records collected or stored</li>
+                    <li><strong>PIPEDA (Canada):</strong> Privacy-by-design principles followed</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>🔄 Updates to This Privacy Policy</h2>
+                
+                <p>We may update this privacy policy to reflect changes in our practices, legal requirements, or app functionality. Any changes will be posted within the app and on our website. Continued use after updates constitutes acceptance of the revised policy.</p>
+                
+                <p>For major changes affecting privacy practices, we will provide prominent notice within the app.</p>
+            </div>
+
+            <div class="contact-info">
+                <h3>📧 Contact Us</h3>
+                <p>If you have questions about this privacy policy, mathematical accuracy, or app functionality:</p>
+                <p>
+                    <strong>Privacy Questions:</strong> <a href="mailto:privacy@matrixcalculator.app" class="contact-link">privacy@matrixcalculator.app</a><br>
+                    <strong>Technical Support:</strong> <a href="mailto:support@matrixcalculator.app" class="contact-link">support@matrixcalculator.app</a><br>
+                    <strong>Educational Support:</strong> <a href="mailto:education@matrixcalculator.app" class="contact-link">education@matrixcalculator.app</a>
+                </p>
+                <p style="margin-top: 20px; font-size: 0.95rem; color: #666;">
+                    We respond to privacy inquiries within 48 hours and technical questions within 24 hours.
+                </p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2025 Matrix Determinant Calculator. All rights reserved.</p>
+            <p style="margin-top: 10px; font-size: 0.9rem; opacity: 0.8;">
+                Made for mathematicians, students, and engineers worldwide 📊
+            </p>
+        </div>
+    </div>
+</body>
+</html>
